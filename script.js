@@ -1,3 +1,4 @@
+//JS file
 let current = '0';
 let prev = null;
 let operator = null;
