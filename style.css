@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a2e;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.calculator {
+    width: 320px;
+    background: #202020;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+        0 32px 64px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+    user-select: none;
+}
+
+/* ── Display ── */
+.display {
+    background: #202020;
+    padding: 20px 20px 12px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.expression {
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+    min-height: 20px;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.result {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    transition: font-size 0.1s ease;
+}
+
+.result.small  { font-size: 32px; }
+.result.xsmall { font-size: 24px; }
+
+/* ── Button Grid ── */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #3a3a3a;
+    border-top: 1px solid #3a3a3a;
+}
+
+button {
+    height: 72px;
+    border: none;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.08s ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Number buttons */
+.btn-num {
+    background: #333333;
+    color: #fff;
+}
+
+.btn-num:hover  { background: #404040; }
+.btn-num:active { background: #505050; }
+
+/* Function buttons (C, +/−, %) */
+.btn-func {
+    background: #3b3b3b;
+    color: #fff;
+}
+
+.btn-func:hover  { background: #4a4a4a; }
+.btn-func:active { background: #5a5a5a; }
+
+/* Operator buttons */
+.btn-op {
+    background: #3b3b3b;
+    color: #c7913e;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.btn-op:hover  { background: #4a4a4a; }
+.btn-op:active { background: #5a5a5a; }
+
+.btn-op.active-op {
+    background: #c7913e;
+    color: #fff;
+}
+
+.btn-op.active-op:hover { background: #d4a050; }
+
+/* Equal button */
+.btn-equal {
+    background: #c7913e;
+    color: #fff;
+    font-size: 22px;
+}
+
+.btn-equal:hover  { background: #d4a050; }
+.btn-equal:active { background: #b07830; }
+
+/* Zero spans 2 columns */
+.zero {
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 28px;
+}
+
+/* Error state */
+.result.error {
+    color: #ff6b6b;
+    font-size: 28px;
+}
