@@ -114,7 +114,3 @@ No dependencies required.
 - An option of chaning the theme
 
 ---
-
-## 👨‍💻 Author
-
-Built as a front-end logic and DOM manipulation exercise.
